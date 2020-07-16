@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnChanges } from '@angular/core';
 import { faUserPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -20,7 +20,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnChanges {
   isAuthenticated: boolean = false;
   faUserPlus = faUserPlus;
   faShoppingCart = faShoppingCart;
@@ -28,13 +28,16 @@ export class HeaderComponent {
   name: string = 'User';
   @ViewChild('myDropDown') dropdown: ElementRef;
 
+  ngOnChanges() {
+    
+  }
+
   openChange() {
-  	if(!this.dropdown.nativeElement.classList.contains('show')){
-  		this.isOpen = true;
-  	}
-    else {
-    	this.isOpen = false;
-    }
+    if(!this.dropdown.nativeElement.classList.contains('show'))
+      this.isOpen = false;
+    // else
+    //   this.isOpen = true;
+    this.isOpen = !this.isOpen;
   }
 
   onCartClicked() {
