@@ -6,14 +6,21 @@
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mr-auto">
 				<li>
-					<div class="dropdown">
-						<a style="cursor: pointer;" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" (click)="openChange()" role="button">Youtubers <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" #myDropDown [@openClose]="isOpen ? 'open' : 'closed'" aria-labelledby="dropdownMenuButton">
-							<li class="dropdown-item"><a style="cursor: pointer;">Youtuber 1</a></li>
-							<li class="dropdown-item"><a style="cursor: pointer;">Youtuber 2</a></li>
-						</ul>
-					</div>
+					<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="outline: 0;">
+						Youtubers
+  						<mat-icon>arrow_drop_down</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu">
+  						<button mat-menu-item style="outline: 0;">
+    						<span>Youtuber 1</span>
+  						</button>
+  						<button mat-menu-item disabled style="outline: 0;">
+    						<span>Youtuber 2</span>
+  						</button>
+  						<button mat-menu-item style="outline: 0;">
+    						<span>Youtuber 3</span>
+  						</button>
+					</mat-menu>
 				</li>
 			</ul>
 			<div class="col-sm-3 col-md-6 ml-auto mr-auto">
@@ -30,16 +37,23 @@
     		</div>
     		<ul class="navbar-nav col-sm-3 col-md-2" style="display: flex; justify-content: space-around;">
     			<li>
-    				<a style="cursor: pointer;" role="button" (click)="onCartClicked()">
-						Cart <fa-icon [icon]="faShoppingCart"></fa-icon>
-					</a>
+					<button mat-icon-button (click)="onCartClicked()" style="outline: 0;">
+						Cart
+  						<mat-icon>shopping_cart</mat-icon>
+					</button>
     			</li>
-				<li *ngIf="isAuthenticated; else signin">Hello {{ name }}!</li>
+				<li *ngIf="isAuthenticated; else signin">
+					<button mat-icon-button (click)="onSignIn()" style="outline: 0;">
+						{{ name }}
+  						<mat-icon>person</mat-icon>
+					</button>
+				</li>
 				<ng-template #signin>
 					<li>
-						<a style="cursor: pointer;" role="button" (click)="onSignIn()">
-							SignIn <fa-icon [icon]="faUserPlus"></fa-icon>
-						</a>
+						<button mat-icon-button (click)="onSignIn()" style="outline: 0;">
+							SignIn
+  							<mat-icon>person_add_alt_1</mat-icon>
+						</button>
 					</li>
 				</ng-template>
 			</ul>

@@ -10,6 +10,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 const appRoutes: Routes = [
 {path: '', component: LandingComponent, pathMatch:'full'}
 ];
@@ -26,6 +30,9 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
     RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [],
