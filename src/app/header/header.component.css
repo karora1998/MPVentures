@@ -1,8 +1,10 @@
 #search {
     background: transparent;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    border: 1px solid white;
     font: bold 12px Arial,Helvetica,Sans-serif;
-    color: black;
+    /*color: black;*/
+    color: white;
     width: 150px;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
@@ -23,9 +25,14 @@
     }
 
 ::placeholder {
+    color: white; 
+    opacity: 1;
+}
+
+/*::placeholder {
     color: black; 
     opacity: 0.75;
-}
+}*/
 
 .navbar {
     -webkit-transition: all 0.7s ease 0s;
