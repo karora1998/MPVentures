@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { faUserPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,9 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  constructor(private router: Router) {}
+
   isAuthenticated: boolean = false;
   faUserPlus = faUserPlus;
   faShoppingCart = faShoppingCart;
@@ -19,18 +23,18 @@ export class HeaderComponent {
   }
 
   onSignIn() {
-  	this.isAuthenticated = true;
+  	this.router.navigate(['/auth']);
   }
 
-  @HostListener('window:scroll', ['$event'])
+  // @HostListener('window:scroll', ['$event'])
 
-  onWindowScroll(e) {
-    let element = document.querySelector('.navbar');
-    if (window.pageYOffset > element.clientHeight) {
-      element.classList.add('bg-light');
-    } else {
-      element.classList.remove('bg-light');
-    }
-  }
+  // onWindowScroll(e) {
+  //   let element = document.querySelector('.navbar');
+  //   if (window.pageYOffset > element.clientHeight) {
+  //     element.classList.add('bg-light');
+  //   } else {
+  //     element.classList.remove('bg-light');
+  //   }
+  // }
 
 }

@@ -1,0 +1,40 @@
+<!-- <div class="center-container" style="top: 30px;">
+  <mat-card>
+    <div fxLayout="row wrap">
+      <div fxFlex="100" fxFlex.gt-sm="50" class="p-20">
+      	hello
+<app-login></app-login>
+      </div>
+      <div fxFlex="100" fxFlex.gt-sm="50" class="p-20" ngClass.sm="mt-2" ngClass.xs="mt-2">
+      	hello
+<app-register></app-register>
+      </div>
+    </div>
+  </mat-card>
+</div> -->
+<div class="container" style="position: relative; top: 100px">
+	<div class="row">
+		<div class="col-md-6">
+			<mat-card>
+        <mat-card-header>
+          <mat-icon>person</mat-icon>
+          <mat-card-title style="font-family: cursive;">Sign In</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <br>
+        <app-login></app-login>
+      </mat-card>		
+		</div>
+		<div class="col-md-6">
+			<mat-card>
+        <mat-card-header>
+          <mat-icon>person_add</mat-icon>
+          <mat-card-title style="font-family: cursive;">Sign Up</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <br>
+        <app-register></app-register>
+      </mat-card>
+		</div>
+	</div>
+</div>
