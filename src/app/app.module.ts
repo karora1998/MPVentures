@@ -13,6 +13,8 @@ import { LandingComponent } from './landing/landing.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
 
 const appRoutes: Routes = [
 {path: '', component: LandingComponent, pathMatch:'full'}
@@ -33,6 +35,8 @@ const appRoutes: Routes = [
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
+    MatDividerModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [],

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-sm navbar-light">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a href="#" class="navbar-brand">MP Ventures</a>
@@ -26,9 +26,10 @@
 			<div class="col-sm-3 col-md-6 ml-auto mr-auto">
         		<form class="navbarch">
         			<div class="input-group">
-            			<input type="text" class="form-control mr-sm-2" placeholder="Search" name="q">
+            			<input type="text" class="form-control mr-sm-2" id="search" placeholder="Type Something" name="q">
             			<div class="input-group-btn">
-                			<button class="btn btn-default btn-success" type="submit">
+                			<button mat-button type="submit" style="outline: 0;">
+                				<mat-icon>search</mat-icon>
                 				Search
                 			</button>
             			</div>

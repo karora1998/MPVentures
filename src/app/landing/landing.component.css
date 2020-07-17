@@ -1,0 +1,20 @@
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+h2 {
+	font-family: cursive;
+	font-weight: 600;
+}
